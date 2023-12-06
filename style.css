@@ -32,7 +32,12 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  
+  
 }
 
 /* ---  Groups & Items --- */
@@ -40,6 +45,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .item {
@@ -57,6 +63,8 @@ header {
   background-color: #83092e;
   padding: 20px 20px 0 20px;
   text-align: center;
+  margin-bottom: 40px; 
+
 }
 
 .logo {
@@ -65,35 +73,75 @@ header {
   color: #ecdbc9;
 }
 
+header nav {
+  display: flex;
+  justify-content: center;
+  
+}
+header nav ul {
+  display: flex;
+  padding-left: 0px;
+  list-style: none;
+  
+}
+
 header nav ul li {
   list-style-type: none;
+  
+
 }
 
 header nav ul li a {
   color: #ecdbc9;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+}
+header nav ul li:last-child a {
+  margin-right: 0;
 }
 
-header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
-}
 
 /* -------  Join Form ------- */
+.join-title {
+  flex: 1;
+  align-items: center;
+  text-align: center; /* Center text */
+}
+
+.join-title img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 form {
   border: 2px solid #6b1a22;
   padding: 10px;
+  flex: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center;
+  align-items: center;
 }
 
 form label {
   font-weight: bold;
+  text-align: left; /* Align label text to the left */
+  width: 100%;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
-  width: 180px;
+  margin-bottom: 10px;
+  width: calc(50% - 5px); /* Set width to 50% minus some margin for two items per row */
 }
 
 form button {
@@ -103,7 +151,17 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
+  
 }
+form .button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center;
+  align-content: flex-end;
+}
+
+
 
 /* -------  Footer ------- */
 
@@ -118,3 +176,145 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+/*When a browser is larger than 600 pixels apply these rules (desktop)*/
+@media all and (min-width: 768px){
+  header {
+  
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+ header .logo {
+    display: flex;  
+    justify-content: flex-start;
+  }
+  header nav {
+    flex: 1;
+    justify-content: flex-end;
+    text-align: right;
+
+  }
+  
+header nav ul li a:hover {
+  color: #bdbdbd;
+  text-decoration: none;
+}
+/*Join section*/
+.join-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  
+ 
+}
+
+.join-title img {
+  max-width: 75%;
+  height: auto;
+  
+}
+
+
+
+#join form {
+  border: 2px solid #6b1a22;
+  
+  flex: 1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+/*About section*/
+
+#about h2 {
+  text-align: center;
+}
+#about img {
+  
+  flex-direction: row;
+}
+.container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  padding: 10px;
+  text-align: center;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 50%;
+  height: auto;
+  margin-right: 10px;
+}
+.image-container img {
+  width: 50%; /* Each image takes up half of the image-container */
+  height: auto;
+  padding: 10px;
+}
+
+.text-container {
+  flex: 1;
+  padding: 10px;
+  margin-left: 20px;
+  text-align: left; /* Add margin between images and text */
+}
+
+/*Download section*/
+#download {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  padding: 10px;
+  justify-content: space-between;
+  
+}
+
+#download img {
+  width: 50%;
+  height: auto;
+}
+
+#download h2 {
+  text-align: center;
+  flex-direction: column;
+  margin-top: 0px;
+}
+
+/*Blog section*/
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-1,
+.post-2,
+.post-3,
+.post-4 {
+  flex-basis: calc(50% - 20px); /* Set width for each item with a 20px gap */
+  margin-bottom: 20px; 
+}
+
+#blog img {
+  width: 100%; 
+  height: auto;
+}
+
+#blog h2 {
+  text-align: center;
+}
+
+#blog h3, p {
+  text-align: left;
+}
+}
